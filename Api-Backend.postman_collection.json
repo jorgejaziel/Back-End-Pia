@@ -1,0 +1,617 @@
+{
+	"info": {
+		"_postman_id": "f922610e-24b3-490f-804a-041971eb9cd2",
+		"name": "Api-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"Jaziel\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuario por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"Arturo\",\n    \"sales\": [\n        {\n            \"saleId\":\"3\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario por id",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale",
+			"item": [
+				{
+					"name": "Ventas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/sales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Venta por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/sales/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sales",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Venta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product\": {\n        \"productId\": 1,\n        \"quantity\":\"3\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Venta por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\":\"7\",\n    \"product\": {\n        \"productId\": 2\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sales/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sales",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Venta por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/sales/2?auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sales",
+								"2"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Productos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"short rojo\",\n    \"price\": \"1,000\",\n    \"quantity\": 3,\n    \"size\": \"M\",\n    \"brand\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Producto por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"air force 1\",\n    \"price\": \"1,250\",\n    \"quantity\": 10,\n    \"size\": \"10.5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/3?auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"3"
+							],
+							"query": [
+								{
+									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "Marcas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Marcas por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/brand/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Marca",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Old Navy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Marca por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Old Navys\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Marca por id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJOYW1lIjoiSmF6aWVsIiwicGFzc3dvcmQiOiIxMjM0NSIsInVzZXJJZCI6OX0sImlhdCI6MTYzNjc5MTcwOH0.RFy8NhoJXtfVR7p_Ec1UOa3dv4w-ftcdUfwJYV_ukDs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/brand/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
