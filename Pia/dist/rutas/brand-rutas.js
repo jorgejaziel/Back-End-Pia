@@ -40,7 +40,7 @@ var express_1 = require("express");
 var typeorm_1 = require("typeorm");
 var Brand_1 = require("../entidades/Brand");
 var router = (0, express_1.Router)();
-// define the home page route
+// Metodo get que regresa todas las marcas
 router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var brands;
     return __generator(this, function (_a) {
@@ -53,6 +53,7 @@ router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
         }
     });
 }); });
+// Metodo get que regresa una marca y manda como parametro el id
 router.get('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var brand;
     return __generator(this, function (_a) {
@@ -65,6 +66,7 @@ router.get('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); });
+// Metodo post que crea una marca
 router.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var newBrand, result;
     return __generator(this, function (_a) {
@@ -80,6 +82,7 @@ router.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); });
+// Metodo put que edita una marca y se envia como parametro un id
 router.put('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var brand, result;
     return __generator(this, function (_a) {
@@ -99,6 +102,7 @@ router.put('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); });
+// Metodo delete para borrar una marca que envia como parametro el id
 router.delete('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         (0, typeorm_1.getRepository)(Brand_1.Brand).delete(req.params.id);

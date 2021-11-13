@@ -40,7 +40,7 @@ var express_1 = require("express");
 var typeorm_1 = require("typeorm");
 var Product_1 = require("../entidades/Product");
 var router = (0, express_1.Router)();
-// define the home page route
+// Metodo get que regresa todas los productos
 router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var products;
     return __generator(this, function (_a) {

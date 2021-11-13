@@ -35,14 +35,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var typeorm_1 = require("typeorm");
 var Sale_1 = require("../entidades/Sale");
 var User_1 = require("../entidades/User");
+var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+var verifyToken_1 = require("../libs/verifyToken");
 var router = (0, express_1.Router)();
 // define the home page route
-router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/', verifyToken_1.TokenValidation, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var users;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -54,7 +59,7 @@ router.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
         }
     });
 }); });
-router.get('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/:id', verifyToken_1.TokenValidation, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var user;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -67,7 +72,7 @@ router.get('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0
     });
 }); });
 router.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var newUser, result;
+    var newUser, result, token;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, (0, typeorm_1.getRepository)(User_1.User).create(req.body)];
@@ -76,12 +81,13 @@ router.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, 
                 return [4 /*yield*/, (0, typeorm_1.getRepository)(User_1.User).save(newUser)];
             case 2:
                 result = _a.sent();
-                res.json(result);
+                token = jsonwebtoken_1.default.sign({ newUser: newUser }, "Secret key");
+                res.header('auth-token', token).json(newUser);
                 return [2 /*return*/];
         }
     });
 }); });
-router.put('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.put('/:id', verifyToken_1.TokenValidation, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var user, result;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -100,7 +106,7 @@ router.put('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); });
-router.delete('/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.delete('/:id', verifyToken_1.TokenValidation, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, (0, typeorm_1.getRepository)(Sale_1.Sale).delete({
