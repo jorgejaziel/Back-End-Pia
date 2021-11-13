@@ -1,0 +1,9 @@
+{
+  "type": "sqlite",
+  "database": "./data/pia.db",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "dist/entidades/**/*.js"
+  ]
+}
