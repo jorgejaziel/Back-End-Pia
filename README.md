@@ -23,8 +23,8 @@ Venta con atributos como venta id, producto id y user id, estos dos últimos son
 Porúltimo, tenemos la entidad Marca con los atributos marca id y nombre, y la entidad Product, con los atributos producto id, 
 nombre, monto, cantidad, marca id como clave foránea, y tamaño, estas últimas entidades tendrán como función ir almacenando 
 en nuestra base de datos los productos, así como la marca de la mercancía. 
-La base de datos que utilizaremos será SQL server, por la sencilla razón que queremos mantener todo el entorno de Microsoft 
-esto ya que hemos decidido utilizar como lenguaje de programación C# para nuestro pía.
+La base de datos que utilizaremos será sqlite3.
+esto ya que hemos decidido utilizar como lenguaje de programación typescript para nuestro pía.
 
 # Diagrama UML
 
